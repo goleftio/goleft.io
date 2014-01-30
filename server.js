@@ -3,10 +3,6 @@
 var express = require('express');
 var fs      = require('fs');
 
-/**
- *  Creating an instance of the Harp server.
- */
-require('harp').server("_harp", { ip : process.env.OPENSHIFT_NODEJS_IP, port: process.env.OPENSHIFT_NODEJS_PORT});
 
 
 /**
@@ -161,4 +157,9 @@ var SampleApp = function() {
 var zapp = new SampleApp();
 zapp.initialize();
 zapp.start();
+
+/**
+ *  Creating an instance of the Harp server.
+ */
+require('harp').server("_harp", { ip : process.env.OPENSHIFT_NODEJS_IP, port: process.env.OPENSHIFT_NODEJS_PORT});
 
