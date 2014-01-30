@@ -2,12 +2,13 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
+var harp    = require('harp');
 
 
 /**
  *  Creating an instance of the Harp server.
  */
-require('harp').server("_harp", { ip : process.env.OPENSHIFT_NODEJS_IP, port: process.env.OPENSHIFT_NODEJS_PORT});
+harp.server("_harp", { ip : process.env.OPENSHIFT_NODEJS_IP, port: process.env.OPENSHIFT_NODEJS_PORT});
 
 /**
  *  Define the sample application.
