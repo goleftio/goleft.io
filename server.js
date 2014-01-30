@@ -3,6 +3,7 @@
 var express = require('express');
 var fs      = require('fs');
 var harp    = require('harp');
+// var app     = express();
 
 
 
@@ -115,7 +116,7 @@ var SampleApp = function() {
      */
     self.initializeServer = function() {
         self.createRoutes();
-        self.app = express.createServer();
+        self.app = express();
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
