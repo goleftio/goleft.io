@@ -92,22 +92,22 @@ var SampleApp = function() {
     /*  App server functions (main app logic here).                       */
     /*  ================================================================  */
 
-    /**
-     *  Create the routing table entries + handlers for the application.
-     */
-    self.createRoutes = function() {
-        self.routes = { };
+    // /**
+    //  *  Create the routing table entries + handlers for the application.
+    //  */
+    // self.createRoutes = function() {
+    //     self.routes = { };
 
-        self.routes['/asciimo'] = function(req, res) {
-            var link = "http://i.imgur.com/kmbjB.png";
-            res.send("<html><body><img src='" + link + "'></body></html>");
-        };
+    //     self.routes['/asciimo'] = function(req, res) {
+    //         var link = "http://i.imgur.com/kmbjB.png";
+    //         res.send("<html><body><img src='" + link + "'></body></html>");
+    //     };
 
-        self.routes['/'] = function(req, res) {
-            res.setHeader('Content-Type', 'text/html');
-            res.send(self.cache_get('index.html') );
-        };
-    };
+    //     self.routes['/'] = function(req, res) {
+    //         res.setHeader('Content-Type', 'text/html');
+    //         res.send(self.cache_get('index.html') );
+    //     };
+    // };
 
 
     /**
@@ -163,9 +163,6 @@ var zapp = new SampleApp();
 zapp.initialize();
 zapp.start();
 
-// /**
-//  *  Creating an instance of the Harp server.
-//  */
-// harp.server("_harp", { ip : process.env.OPENSHIFT_NODEJS_IP, port: process.env.OPENSHIFT_NODEJS_PORT});
+
 
 
