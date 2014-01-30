@@ -115,13 +115,18 @@ var SampleApp = function() {
      *  the handlers.
      */
     self.initializeServer = function() {
-        self.createRoutes();
+        // self.createRoutes();
         self.app = express();
 
-        //  Add handlers for the app (from the routes).
-        for (var r in self.routes) {
-            self.app.get(r, self.routes[r]);
-        }
+        // //  Add handlers for the app (from the routes).
+        // for (var r in self.routes) {
+        //     self.app.get(r, self.routes[r]);
+        // }
+        
+        self.app.configure(function(){
+            self.app.use(express.static(__dirname + "/_harp"));
+            self.app.use(harp.mount(__dirname + "/_harp"));
+        });
     };
 
 
