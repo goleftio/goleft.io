@@ -124,7 +124,8 @@ var SampleApp = function() {
         // }
         
         self.app.configure(function(){
-            self.app.use(express.static(__dirname + "/_harp"));
+            self.app.use(express.favicon(__dirname + '/_harp/favicon.ico', {maxAge: 2592000000}));
+            self.app.use(express.static(__dirname + "/_harp", {maxAge: 2592000000}));
             self.app.use(harp.mount(__dirname + "/_harp"));
         });
     };
